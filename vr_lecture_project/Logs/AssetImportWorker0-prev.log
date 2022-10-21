@@ -15,7 +15,7 @@ F:/Sungshin/github/3-2-virtual-reality/vr_lecture_project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-7284
+3727
 Successfully changed project path to: F:/Sungshin/github/3-2-virtual-reality/vr_lecture_project
 F:/Sungshin/github/3-2-virtual-reality/vr_lecture_project
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,8 +47,8 @@ F:/Sungshin/github/3-2-virtual-reality/vr_lecture_project
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 80.36 ms, found 11 plugins.
-Preloading 1 native plugins for Editor in 1.01 ms.
+Refreshing native plugins compatible for Editor in 90.16 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.82 ms.
 Initialize engine version: 2021.3.9f1 (ad3870b89536)
 [Subsystems] Discovering subsystems at path F:/unity/2021.3.9f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path F:/Sungshin/github/3-2-virtual-reality/vr_lecture_project/Assets
@@ -63,37 +63,37 @@ Initialize mono
 Mono path[0] = 'F:/unity/2021.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'F:/unity/2021.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'F:/unity/2021.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56380
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56120
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: F:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002589 seconds.
+Registered in 0.002279 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 64.16 ms, found 11 plugins.
+Refreshing native plugins compatible for Editor in 69.97 ms, found 11 plugins.
 Preloading 1 native plugins for Editor in 0.06 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.462 seconds
+- Completed reload, in  0.436 seconds
 Domain Reload Profiling:
-	ReloadAssembly (462ms)
-		BeginReloadAssembly (85ms)
+	ReloadAssembly (436ms)
+		BeginReloadAssembly (66ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (0ms)
-		EndReloadAssembly (297ms)
-			LoadAssemblies (84ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (302ms)
+			LoadAssemblies (66ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (70ms)
+			SetupTypeCache (68ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (18ms)
-			SetupLoadedEditorAssemblies (176ms)
+			RebuildScriptCaches (17ms)
+			SetupLoadedEditorAssemblies (183ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (64ms)
+				RefreshPlugins (70ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (76ms)
+				ProcessInitializeOnLoadAttributes (78ms)
 				ProcessInitializeOnLoadMethodAttributes (30ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
@@ -101,13 +101,13 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.010361 seconds.
+Registered in 0.007716 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image F:\Sungshin\github\3-2-virtual-reality\vr_lecture_project\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image F:\Sungshin\github\3-2-virtual-reality\vr_lecture_project\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 68.70 ms, found 11 plugins.
-Preloading 1 native plugins for Editor in 0.06 ms.
+Refreshing native plugins compatible for Editor in 68.00 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
 Package Manager log level set to [2]
 System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
   at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in F:\Sungshin\github\3-2-virtual-reality\vr_lecture_project\Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusLoader.cs:271 
@@ -125,43 +125,43 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
 
 Mono: successfully reloaded assembly
-- Completed reload, in  0.886 seconds
+- Completed reload, in  1.598 seconds
 Domain Reload Profiling:
-	ReloadAssembly (886ms)
-		BeginReloadAssembly (110ms)
+	ReloadAssembly (1599ms)
+		BeginReloadAssembly (103ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (16ms)
-		EndReloadAssembly (696ms)
-			LoadAssemblies (109ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (1405ms)
+			LoadAssemblies (784ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (188ms)
+			SetupTypeCache (199ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (37ms)
-			SetupLoadedEditorAssemblies (367ms)
+			RebuildScriptCaches (40ms)
+			SetupLoadedEditorAssemblies (379ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (2ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (69ms)
-				BeforeProcessingInitializeOnLoad (64ms)
-				ProcessInitializeOnLoadAttributes (204ms)
+				RefreshPlugins (68ms)
+				BeforeProcessingInitializeOnLoad (65ms)
+				ProcessInitializeOnLoadAttributes (215ms)
 				ProcessInitializeOnLoadMethodAttributes (26ms)
-				AfterProcessingInitializeOnLoad (2ms)
+				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.75 ms, found 11 plugins.
-Preloading 1 native plugins for Editor in 0.06 ms.
-Unloading 4084 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 49 unused Assets / (112.3 KB). Loaded Objects now: 4539.
-Memory consumption went from 148.3 MB to 148.1 MB.
-Total: 4.463000 ms (FindLiveObjects: 0.892900 ms CreateObjectMapping: 0.197700 ms MarkObjects: 3.248000 ms  DeleteObjects: 0.122300 ms)
+Refreshing native plugins compatible for Editor in 0.83 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Unloading 4459 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 50 unused Assets / (155.9 KB). Loaded Objects now: 4914.
+Memory consumption went from 163.7 MB to 163.5 MB.
+Total: 3.674400 ms (FindLiveObjects: 0.331300 ms CreateObjectMapping: 0.202800 ms MarkObjects: 2.973500 ms  DeleteObjects: 0.166300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -176,77 +176,19 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 4065.672655 seconds.
-  path: Assets/Scenes/week05/week05lecture.unity
-  artifactKey: Guid(b879fdfd775c8904f96f88c70d53d5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/week05/week05lecture.unity using Guid(b879fdfd775c8904f96f88c70d53d5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27a308fad7b4d540a482a7dfd047ef71') in 0.010537 seconds 
+  Time since last request: 7256.745000 seconds.
+  path: Assets/textures/blue-g7d10fe1a1_1280.png
+  artifactKey: Guid(5e53a505a158d674abbfa920d177be18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/textures/blue-g7d10fe1a1_1280.png using Guid(5e53a505a158d674abbfa920d177be18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0139ae70e0e22c976673e5c29dab0d2') in 0.053158 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 85.049541 seconds.
-  path: Assets/Scenes/s1.unity
-  artifactKey: Guid(0cdb0ffb16259a6419229aae95e81c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/s1.unity using Guid(0cdb0ffb16259a6419229aae95e81c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffcf0bb245b2d124410c4af8c245c6c3') in 0.004082 seconds 
+  Time since last request: 49.165555 seconds.
+  path: Assets/materials/red.mat
+  artifactKey: Guid(f92a92b49f177424dac2e20f28e2fbf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/materials/red.mat using Guid(f92a92b49f177424dac2e20f28e2fbf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcc1b70ce4d1ea21a5e63ae76033efbd') in 0.070407 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.419992 seconds.
-  path: Assets/Scenes/week04
-  artifactKey: Guid(f70041de55e006147b0551c25943d2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/week04 using Guid(f70041de55e006147b0551c25943d2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8588f2a41fbb2a0c748fbd88aa87ddc6') in 0.003784 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 18.347342 seconds.
-  path: Assets/Scenes/week04
-  artifactKey: Guid(d068b7910b7b0a14b9e57322598c7736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/week04 using Guid(d068b7910b7b0a14b9e57322598c7736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a82e7ee75f6bd1017e565656d5254eca') in 0.003464 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.041785 seconds.
-  path: Assets/Scenes/week04/homework/week4hwVillage.unity
-  artifactKey: Guid(cd24915edfa0d6e4082bd01f6a804cba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/week04/homework/week4hwVillage.unity using Guid(cd24915edfa0d6e4082bd01f6a804cba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2c02b72c62571d39675b016bc3d9b72') in 0.003906 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 200.161615 seconds.
-  path: Assets/Five Seamless Tileable Ground Textures/Materials/Grass.mat
-  artifactKey: Guid(11729fa27a679db4fbeedeff9e7512fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Five Seamless Tileable Ground Textures/Materials/Grass.mat using Guid(11729fa27a679db4fbeedeff9e7512fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b71c9467e082d01f4559d7f68a360047') in 0.095148 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 111.359741 seconds.
-  path: Assets/ExampleAssets/Tutorial/Images/1-welcome-screen-image.png
-  artifactKey: Guid(11e34d76fce7843be984510eca5c9139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ExampleAssets/Tutorial/Images/1-welcome-screen-image.png using Guid(11e34d76fce7843be984510eca5c9139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42e8c653078050d823da1a40ed990629') in 0.064566 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000066 seconds.
-  path: Assets/Five Seamless Tileable Ground Textures/Textures/Sandy.png
-  artifactKey: Guid(fe1221309f0d1e04c88ed730fcb94d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Five Seamless Tileable Ground Textures/Textures/Sandy.png using Guid(fe1221309f0d1e04c88ed730fcb94d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2217d9ce47cf6c06bd9bbca5da5164b4') in 0.020540 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000075 seconds.
-  path: Assets/RPGPP_LT/Textures/rpgpp_lt_tex_a.tga
-  artifactKey: Guid(0bb174f69c9851a48b09bf7d8180c39e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RPGPP_LT/Textures/rpgpp_lt_tex_a.tga using Guid(0bb174f69c9851a48b09bf7d8180c39e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52baa09f66d51429512d846a876df2b0') in 0.024303 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/ExampleAssets/Textures/Grid_Light_512x512.png
-  artifactKey: Guid(a5888ab2610a91d40a5deefc40b7bfe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ExampleAssets/Textures/Grid_Light_512x512.png using Guid(a5888ab2610a91d40a5deefc40b7bfe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '806b5cb9712951ece058d283aa39a808') in 0.018459 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Five Seamless Tileable Ground Textures/Textures/Water Light Blue.png
-  artifactKey: Guid(88f76f18520011749b20fb0977ee6c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Five Seamless Tileable Ground Textures/Textures/Water Light Blue.png using Guid(88f76f18520011749b20fb0977ee6c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a23dec55d6538112d9917ab2acf7991d') in 0.021105 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000067 seconds.
-  path: Assets/ExampleAssets/Tutorial/Images/project-header-vr.png
-  artifactKey: Guid(6eaf09dd6cc8a49708bf60691e32bebf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ExampleAssets/Tutorial/Images/project-header-vr.png using Guid(6eaf09dd6cc8a49708bf60691e32bebf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '891a526d40d1dfe0328b88ea070cfdcc') in 0.016303 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  Time since last request: 38.973292 seconds.
+  path: Assets/materials/blue dot.mat
+  artifactKey: Guid(f92a92b49f177424dac2e20f28e2fbf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/materials/blue dot.mat using Guid(f92a92b49f177424dac2e20f28e2fbf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78c80f4f093ced2884c283feedd50bca') in 0.018205 seconds 
