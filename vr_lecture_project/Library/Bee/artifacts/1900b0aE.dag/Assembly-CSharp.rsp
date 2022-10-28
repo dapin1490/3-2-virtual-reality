@@ -380,6 +380,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 "Assets/Scenes/week06/RotateLR.cs"
 "Assets/Scenes/week06/RotateY.cs"
+"Assets/Scenes/week07/Lec01Jump.cs"
+"Assets/Scenes/week07/Lec01Move.cs"
 "Assets/XRPlatformControllerSetup.cs"
 -langversion:9.0
 
