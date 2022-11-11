@@ -382,6 +382,7 @@
 "Assets/Scenes/week06/RotateY.cs"
 "Assets/Scenes/week07/Lec01Jump.cs"
 "Assets/Scenes/week07/Lec01Move.cs"
+"Assets/Scenes/week09/CameraFollow.cs"
 "Assets/XRPlatformControllerSetup.cs"
 -langversion:9.0
 
