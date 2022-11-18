@@ -1,35 +1,37 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyDamaged : MonoBehaviour
 {
-    public int HP = 5;//¾ò¾î¸Â´Â ÀûÀÇ hpÀÔ´Ï´Ù.
+    public int HP = 5;//ì–»ì–´ë§ëŠ” ì ì˜ hpì…ë‹ˆë‹¤.
     public GameObject dead;
+    public GameObject effect;
     bool ready = true;
     float delay = 0.5f;
 
-    private void OnTriggerEnter(Collider col)//Ãæµ¹ÀÌ µé¾î ¿À¸é ½ÇÇàÇÕ´Ï´Ù. 
+    private void OnTriggerEnter(Collider col)//ì¶©ëŒì´ ë“¤ì–´ ì˜¤ë©´ ì‹¤í–‰í•©ë‹ˆë‹¤. 
     {
-        if (col.gameObject.tag == "HeroAttack" && ready)//HeroAttackÀÌ¶õ ÅÂ±×¸¦ °¡Áø ¹°Ã¼°¡ µé¾î¿À¸é ½ÇÇàÇÕ´Ï´Ù.
+        if (col.gameObject.tag == "HeroAttack" && ready)//HeroAttackì´ë€ íƒœê·¸ë¥¼ ê°€ì§„ ë¬¼ì²´ê°€ ë“¤ì–´ì˜¤ë©´ ì‹¤í–‰í•©ë‹ˆë‹¤.
         {
             int damagefromHero = col.gameObject.GetComponent<WeaponDamage>().weapondamage;
-            //Ãæµ¹ÇÑ ¹°Ã¼ÀÇ WeaponDamageÄŞÆ÷³ÍÆ®¸¦ °¡Á®¿Í ±× ¾ÈÀÇ weapondamage¶õ º¯¼ö¸¦ damagefromHero·Î ÀúÀåÇÕ´Ï´Ù.
-            HP = HP - damagefromHero; //±× º¯¼ö°ªÀ» ±âÁ¸ hp°ª¿¡¼­ »« µÚ ´Ù½Ã ÀúÀåÇÕ´Ï´Ù.
-            ready = false;//ÇÇ°İºÒ°¡½Ã°£À» °®½À´Ï´Ù.
+            //ì¶©ëŒí•œ ë¬¼ì²´ì˜ WeaponDamageì½¤í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì™€ ê·¸ ì•ˆì˜ weapondamageë€ ë³€ìˆ˜ë¥¼ damagefromHeroë¡œ ì €ì¥í•©ë‹ˆë‹¤.
+            HP = HP - damagefromHero; //ê·¸ ë³€ìˆ˜ê°’ì„ ê¸°ì¡´ hpê°’ì—ì„œ ëº€ ë’¤ ë‹¤ì‹œ ì €ì¥í•©ë‹ˆë‹¤.
+            ready = false;//í”¼ê²©ë¶ˆê°€ì‹œê°„ì„ ê°–ìŠµë‹ˆë‹¤.
+            Instantiate(effect, col.transform.position, col.transform.rotation); //ì§€ì •ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ë¶ˆëŸ¬ ì˜µë‹ˆë‹¤.
             StartCoroutine(Wait());
         }
 
-        if (HP <= 0) //¸¸ÀÏ hp°¡ 0 ÀÌÇÏ°¡ µÇ¸é ¾Æ·¡¿Í °°ÀÌ ½ÇÇàÇÕ´Ï´Ù.
+        if (HP <= 0) //ë§Œì¼ hpê°€ 0 ì´í•˜ê°€ ë˜ë©´ ì•„ë˜ì™€ ê°™ì´ ì‹¤í–‰í•©ë‹ˆë‹¤.
         {
-            Destroy(gameObject, 0); //0ÃÊ ÈÄ ÇØ´ç ¹°Ã¼¸¦ »èÁ¦ÇÕ´Ï´Ù.
-            Instantiate(dead, transform.position, transform.rotation); //ÁöÁ¤µÈ ¿ÀºêÁ§Æ®¸¦ ºÒ·¯ ¿É´Ï´Ù.
+            Destroy(gameObject, 0); //0ì´ˆ í›„ í•´ë‹¹ ë¬¼ì²´ë¥¼ ì‚­ì œí•©ë‹ˆë‹¤.
+            Instantiate(dead, transform.position, transform.rotation); //ì§€ì •ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ë¶ˆëŸ¬ ì˜µë‹ˆë‹¤.
         }
 
-        IEnumerator Wait()  //´Ù´ÜÈ÷Æ®¸¦ ¹æÁöÇÏ±â À§ÇÑ µô·¹ÀÌÀÔ´Ï´Ù.
+        IEnumerator Wait()  //ë‹¤ë‹¨íˆíŠ¸ë¥¼ ë°©ì§€í•˜ê¸° ìœ„í•œ ë”œë ˆì´ì…ë‹ˆë‹¤.
         {
             yield return new WaitForSeconds(delay);  //delay
-            ready = true;  //ÇÇ°İÁØºñ»óÅÂ·Î ¹Ù²ß´Ï´Ù.
+            ready = true;  //í”¼ê²©ì¤€ë¹„ìƒíƒœë¡œ ë°”ê¿‰ë‹ˆë‹¤.
         }
     }
 }
