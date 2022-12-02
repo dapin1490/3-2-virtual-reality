@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HeroAttack
   - Door
+  - Grabbable
   layers:
   - Default
   - TransparentFX
