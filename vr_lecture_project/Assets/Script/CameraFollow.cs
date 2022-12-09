@@ -4,45 +4,45 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public GameObject hero; //Ä«¸Ş¶ó°¡ ÂÑ¾Æ´Ù´Ò ´ë»óÀÔ´Ï´Ù.
-    float Ymin = 5.0f; //Ä«¸Ş¶ó°¡ ³»·Á¿À´Â ÃÖÀú°¢ÀÔ´Ï´Ù. ´õ ³»¸®°í ½Í´Ù¸é ³»·ÁÁİ½Ã´Ù.
-    float Ymax = 40.0f; //Ä«¸Ş¶ó°¡ ¿Ã¶ó°¡´Â ÃÖ°í°¢ÀÔ´Ï´Ù. 90µµ¸¦ ³Ñ¾î°¡¸é µÚ·Î µ¹¾Æ°©´Ï´Ù.
-    Camera cam; //Ä«¸Ş¶ó º¯¼öÀÔ´Ï´Ù.
-    Transform lookat; //Ä«¸Ş¶ó°¡ ÂÑ¾Æ´Ù´Ò À§Ä¡ÀÔ´Ï´Ù.
-    Transform camtrans; //Ä«¸Ş¶óÀÇ À§Ä¡ÀÔ´Ï´Ù.
-    float Xnow = 0.0f; //Ä«¸Ş¶ó°¡ ¿òÁ÷ÀÌ´Â ÁÂ¿ì°æ·Îº¯¼öÀÔ´Ï´Ù.
-    float Ynow = 15.0f; //Ä«¸Ş¶ó°¡ ¿òÁ÷ÀÌ´Â »óÇÏ°æ·Îº¯¼öÀÔ´Ï´Ù.
+    public GameObject hero; //ì¹´ë©”ë¼ê°€ ì«“ì•„ë‹¤ë‹ ëŒ€ìƒì…ë‹ˆë‹¤.
+    float Ymin = 5.0f; //ì¹´ë©”ë¼ê°€ ë‚´ë ¤ì˜¤ëŠ” ìµœì €ê°ì…ë‹ˆë‹¤. ë” ë‚´ë¦¬ê³  ì‹¶ë‹¤ë©´ ë‚´ë ¤ì¤ì‹œë‹¤.
+    float Ymax = 40.0f; //ì¹´ë©”ë¼ê°€ ì˜¬ë¼ê°€ëŠ” ìµœê³ ê°ì…ë‹ˆë‹¤. 90ë„ë¥¼ ë„˜ì–´ê°€ë©´ ë’¤ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.
+    Camera cam; //ì¹´ë©”ë¼ ë³€ìˆ˜ì…ë‹ˆë‹¤.
+    Transform lookat; //ì¹´ë©”ë¼ê°€ ì«“ì•„ë‹¤ë‹ ìœ„ì¹˜ì…ë‹ˆë‹¤.
+    Transform camtrans; //ì¹´ë©”ë¼ì˜ ìœ„ì¹˜ì…ë‹ˆë‹¤.
+    float Xnow = 0.0f; //ì¹´ë©”ë¼ê°€ ì›€ì§ì´ëŠ” ì¢Œìš°ê²½ë¡œë³€ìˆ˜ì…ë‹ˆë‹¤.
+    float Ynow = 15.0f; //ì¹´ë©”ë¼ê°€ ì›€ì§ì´ëŠ” ìƒí•˜ê²½ë¡œë³€ìˆ˜ì…ë‹ˆë‹¤.
 
-    public float distance = 5.0f; //Ä«¸Ş¶ó°¡ ¹°Ã¼·ÎºÎÅÍ ¶³¾îÁ® ÀÖ´Â °Å¸®ÀÔ´Ï´Ù.
-    public float RotateX = 15.0f; //Ä«¸Ş¶óÀÇ È¸Àü¼ÓµµÀÔ´Ï´Ù. Ä³¸¯ÅÍ È¸Àü ¼Óµµ¿Í ¶È°°¾Æ¾ß ÇÕ´Ï´Ù.
+    public float distance = 5.0f; //ì¹´ë©”ë¼ê°€ ë¬¼ì²´ë¡œë¶€í„° ë–¨ì–´ì ¸ ìˆëŠ” ê±°ë¦¬ì…ë‹ˆë‹¤.
+    public float RotateX = 15.0f; //ì¹´ë©”ë¼ì˜ íšŒì „ì†ë„ì…ë‹ˆë‹¤. ìºë¦­í„° íšŒì „ ì†ë„ì™€ ë˜‘ê°™ì•„ì•¼ í•©ë‹ˆë‹¤.
 
     // Start is called before the first frame update
     void Start()
     {
-        lookat = hero.gameObject.transform.transform; //Ä³¸¯ÅÍ·ÎºÎÅÍÀ§Ä¡¸¦ ¹Ş¾Æ¿É´Ï´Ù.
-        camtrans = transform; //Ä«¸Ş¶ó À§Ä¡¸¦ ¹Ş¾Æ¿É´Ï´Ù.
-        cam = Camera.main; //¸ŞÀÎ Ä«¸Ş¶ó¸¦ camº¯¼ö¿¡ ÇÒ´çÇÕ´Ï´Ù.
+        lookat = hero.gameObject.transform.transform; //ìºë¦­í„°ë¡œë¶€í„°ìœ„ì¹˜ë¥¼ ë°›ì•„ì˜µë‹ˆë‹¤.
+        camtrans = transform; //ì¹´ë©”ë¼ ìœ„ì¹˜ë¥¼ ë°›ì•„ì˜µë‹ˆë‹¤.
+        cam = Camera.main; //ë©”ì¸ ì¹´ë©”ë¼ë¥¼ camë³€ìˆ˜ì— í• ë‹¹í•©ë‹ˆë‹¤.
     }
 
     // Update is called once per frame
     void Update()
     {
-        Xnow += Input.GetAxis("Mouse X"); //Ä«¸Ş¶óÀÇ ÁÂ¿ì°æ·ÎÀÔ·ÂÀ» ¹Ş½À´Ï´Ù.
-        Ynow -= Input.GetAxis("Mouse Y"); //Ä«¸Ş¶óÀÇ »óÇÏ°æ·ÎÀÔ·ÂÀ» ¹Ş½À´Ï´Ù.
-        Ynow = Mathf.Clamp(Ynow, Ymin, Ymax); //Ä«¸Ş¶óÀÇ »óÇÏ º¯µ¿ÆøÀ» Á¦ÇÑÇÕ´Ï´Ù.
-        if (hero == null) //ÇÃ·¹ÀÌ¾î°¡ »ç¶óÁ³À» °æ¿ì ¿À·ù¸¦ ¹æÁöÇÏ±â À§ÇÑ ºÎºĞÀÔ´Ï´Ù. »ç¶óÁüÀ» °¨ÁöÇÕ´Ï´Ù.
+        Xnow += Input.GetAxis("Mouse X"); //ì¹´ë©”ë¼ì˜ ì¢Œìš°ê²½ë¡œì…ë ¥ì„ ë°›ìŠµë‹ˆë‹¤.
+        Ynow -= Input.GetAxis("Mouse Y"); //ì¹´ë©”ë¼ì˜ ìƒí•˜ê²½ë¡œì…ë ¥ì„ ë°›ìŠµë‹ˆë‹¤.
+        Ynow = Mathf.Clamp(Ynow, Ymin, Ymax); //ì¹´ë©”ë¼ì˜ ìƒí•˜ ë³€ë™í­ì„ ì œí•œí•©ë‹ˆë‹¤.
+        if (hero == null) //í”Œë ˆì´ì–´ê°€ ì‚¬ë¼ì¡Œì„ ê²½ìš° ì˜¤ë¥˜ë¥¼ ë°©ì§€í•˜ê¸° ìœ„í•œ ë¶€ë¶„ì…ë‹ˆë‹¤. ì‚¬ë¼ì§ì„ ê°ì§€í•©ë‹ˆë‹¤.
         {
-            gameObject.GetComponent<CameraFollow>().enabled = false; // ÇØ´ç ½ºÅ©¸³Æ®¸¦ ºñÈ°¼ºÈ­ÇÕ´Ï´Ù.
+            gameObject.GetComponent<CameraFollow>().enabled = false; // í•´ë‹¹ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ë¹„í™œì„±í™”í•©ë‹ˆë‹¤.
         }
     }
 
     private void LateUpdate()
-    //¹Ù·Î¹Ù·Î ¹İÀÀÇÏ´Â °ÍÀÌ ¾Æ´Ñ, À§ Çàµ¿À» ÇÑ ÈÄ¿¡ µÚµû¶ó ½ÇÇàÇÕ´Ï´Ù. ºÎµå·¯¿î Ä«¸Ş¶ó ¿òÁ÷ÀÓÀÌ ³ª¿É´Ï´Ù.
+    //ë°”ë¡œë°”ë¡œ ë°˜ì‘í•˜ëŠ” ê²ƒì´ ì•„ë‹Œ, ìœ„ í–‰ë™ì„ í•œ í›„ì— ë’¤ë”°ë¼ ì‹¤í–‰í•©ë‹ˆë‹¤. ë¶€ë“œëŸ¬ìš´ ì¹´ë©”ë¼ ì›€ì§ì„ì´ ë‚˜ì˜µë‹ˆë‹¤.
     {
-        Vector3 dir = new Vector3(0, 0, -distance); //°Å¸®¸¦ ¹ú·ÁÁİ´Ï´Ù.
+        Vector3 dir = new Vector3(0, 0, -distance); //ê±°ë¦¬ë¥¼ ë²Œë ¤ì¤ë‹ˆë‹¤.
         Quaternion rotation = Quaternion.Euler(Ynow * 2, Xnow * RotateX, 0);
-        //È¸Àü°ªÀ» ¸¸µì´Ï´Ù. »óÇÏ´Â 2¹è, ÁÂ¿ì´Â RotateX(Ä³¸¯ÅÍÈ¸Àü°ª)¸¦ °öÇØÁÖ¾ú½À´Ï´Ù.
-        camtrans.position = lookat.position + rotation * dir; //Ä«¸Ş¶ó¸¦ À§Ä¡¸¦ ÁöÁ¤ÇØ Áİ´Ï´Ù.
-        camtrans.LookAt(lookat.position); //Ä«¸Ş¶ó°¡ ¸ñÀûÁö¸¦ ¹Ù¶óº¸°Ô ÇÕ´Ï´Ù.
+        //íšŒì „ê°’ì„ ë§Œë“­ë‹ˆë‹¤. ìƒí•˜ëŠ” 2ë°°, ì¢Œìš°ëŠ” RotateX(ìºë¦­í„°íšŒì „ê°’)ë¥¼ ê³±í•´ì£¼ì—ˆìŠµë‹ˆë‹¤.
+        camtrans.position = lookat.position + rotation * dir; //ì¹´ë©”ë¼ë¥¼ ìœ„ì¹˜ë¥¼ ì§€ì •í•´ ì¤ë‹ˆë‹¤.
+        camtrans.LookAt(lookat.position); //ì¹´ë©”ë¼ê°€ ëª©ì ì§€ë¥¼ ë°”ë¼ë³´ê²Œ í•©ë‹ˆë‹¤.
     }
 }

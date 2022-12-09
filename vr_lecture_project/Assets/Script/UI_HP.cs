@@ -1,22 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; // TMPÅØ½ºÆ®¸¦ »ç¿ëÇÒ ¶§ Ãß°¡ÇØ Áİ½Ã´Ù.
+using TMPro; // TMPí…ìŠ¤íŠ¸ë¥¼ ì‚¬ìš©í•  ë•Œ ì¶”ê°€í•´ ì¤ì‹œë‹¤.
 
 public class UI_HP : MonoBehaviour
 {
-    public TMP_Text myHP; // ÅØ½ºÆ® º¯¼öÀÔ´Ï´Ù.
-    public int HP; // ½ÇÁ¦ hp¸¦ ³Ö´Â º¯¼öÀÔ´Ï´Ù.
+    public TMP_Text myHP; // í…ìŠ¤íŠ¸ ë³€ìˆ˜ì…ë‹ˆë‹¤.
+    public int HP; // ì‹¤ì œ hpë¥¼ ë„£ëŠ” ë³€ìˆ˜ì…ë‹ˆë‹¤.
 
-    void Start() // Ã³À½ ½ÃÀÛÇÒ ¶§ Ç¥½ÃÇÕ´Ï´Ù.
+    void Start() // ì²˜ìŒ ì‹œì‘í•  ë•Œ í‘œì‹œí•©ë‹ˆë‹¤.
     {
-        HP = GetComponent<EnemyDamaged>().HP; // hp¸¦ °¡Á®¿Í¼­ hpº¯¼ö¿¡ ³Ö½À´Ï´Ù.
-        myHP.text = "HP:" + HP.ToString(); //UIÅØ½ºÆ®¿¡ HP : ¶ó´Â ¹®±¸¸¦ ³Ö°í hpº¯¼ö¸¦ ¹®ÀÚ(string)À¸·Î º¯È¯ÇØ Ãß°¡ÇÕ´Ï´Ù. 
+        HP = GetComponent<EnemyDamaged>().HP; // hpë¥¼ ê°€ì ¸ì™€ì„œ hpë³€ìˆ˜ì— ë„£ìŠµë‹ˆë‹¤.
+        myHP.text = "HP:" + HP.ToString(); //UIí…ìŠ¤íŠ¸ì— HP : ë¼ëŠ” ë¬¸êµ¬ë¥¼ ë„£ê³  hpë³€ìˆ˜ë¥¼ ë¬¸ì(string)ìœ¼ë¡œ ë³€í™˜í•´ ì¶”ê°€í•©ë‹ˆë‹¤. 
     }
 
-    private void OnTriggerEnter(Collider col) //Ãæµ¹ÀÌ µé¾î ¿À¸é ½ÇÇàÇÕ´Ï´Ù. 
+    private void OnTriggerEnter(Collider col) //ì¶©ëŒì´ ë“¤ì–´ ì˜¤ë©´ ì‹¤í–‰í•©ë‹ˆë‹¤. 
     {
-        HP = GetComponent<EnemyDamaged>().HP; // À§¿Í µ¿ÀÏÇÏµÇ Ãæµ¹ÀÌ ¹ß»ıÇÒ ¶§¸¸ °»½ÅÇÕ´Ï´Ù.
+        HP = GetComponent<EnemyDamaged>().HP; // ìœ„ì™€ ë™ì¼í•˜ë˜ ì¶©ëŒì´ ë°œìƒí•  ë•Œë§Œ ê°±ì‹ í•©ë‹ˆë‹¤.
         myHP.text = "HP:" + HP.ToString();
     }
 }

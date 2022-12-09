@@ -13,19 +13,19 @@ public class Lec01Move : MonoBehaviour
 	}
 
 	void Update()
-	{//void update´Â ½ºÅ©¸³Æ®°¡ ½ÇÇàµÇ¸é °è¼Ó ¹İº¹ÀûÀ¸·Î ½ÇÇàµË´Ï´Ù.//
+	{//void updateëŠ” ìŠ¤í¬ë¦½íŠ¸ê°€ ì‹¤í–‰ë˜ë©´ ê³„ì† ë°˜ë³µì ìœ¼ë¡œ ì‹¤í–‰ë©ë‹ˆë‹¤.//
 		transform.Rotate(0, Input.GetAxis("Mouse X") * RotateX, 0);
-		//transformÀº °´Ã¼¸¦ ¿òÁ÷ÀÌ´Â ¸í·É¾îÀÔ´Ï´Ù. rotate´Â È¸ÀüÀÌ¸ç µÚ¿¡ °ıÈ£ ¾ÈÀº xÃà, yÃà, zÃàÀ» ÀÇ¹ÌÇÕ´Ï´Ù. //
+		//transformì€ ê°ì²´ë¥¼ ì›€ì§ì´ëŠ” ëª…ë ¹ì–´ì…ë‹ˆë‹¤. rotateëŠ” íšŒì „ì´ë©° ë’¤ì— ê´„í˜¸ ì•ˆì€ xì¶•, yì¶•, zì¶•ì„ ì˜ë¯¸í•©ë‹ˆë‹¤. //
 		
-		// input.getaxis´Â À¯´ÏÆ¼¿¡¼­ ¹Ş¾ÆµéÀÌ´Â Æ¯Á¤ Å° °ªÀ¸·Î mouse x´Â ¸¶¿ì½ºÀÇ xÃàÀ» ÀÇ¹ÌÇÏ¸ç ±× °ª¿¡ ¾Õ¼­ ¼³Á¤ÇÑrotateX°ªÀ» °öÇØÁÖ¾î ¼Óµµ¸¦ °áÁ¤ÇÕ´Ï´Ù.//
+		// input.getaxisëŠ” ìœ ë‹ˆí‹°ì—ì„œ ë°›ì•„ë“¤ì´ëŠ” íŠ¹ì • í‚¤ ê°’ìœ¼ë¡œ mouse xëŠ” ë§ˆìš°ìŠ¤ì˜ xì¶•ì„ ì˜ë¯¸í•˜ë©° ê·¸ ê°’ì— ì•ì„œ ì„¤ì •í•œrotateXê°’ì„ ê³±í•´ì£¼ì–´ ì†ë„ë¥¼ ê²°ì •í•©ë‹ˆë‹¤.//
 		float keyHorizontal = Input.GetAxis("Horizontal");
 		float keyVertical = Input.GetAxis("Vertical");
 		
-		//float(¼Ò¼ö) º¯¼ö¸¦ »õ·Î Á¤ÀÇÇÕ´Ï´Ù. input.getaxisÀÇ horizontalÀº Å°º¸µåÀÇ ÁÂ¿ì³ª ad, Á¶ÀÌ½ºÆ½ÀÇ ÁÂ¿ìÀÔ´Ï´Ù. verticalÀº »óÇÏÀÔ´Ï´Ù//
+		//float(ì†Œìˆ˜) ë³€ìˆ˜ë¥¼ ìƒˆë¡œ ì •ì˜í•©ë‹ˆë‹¤. input.getaxisì˜ horizontalì€ í‚¤ë³´ë“œì˜ ì¢Œìš°ë‚˜ ad, ì¡°ì´ìŠ¤í‹±ì˜ ì¢Œìš°ì…ë‹ˆë‹¤. verticalì€ ìƒí•˜ì…ë‹ˆë‹¤//
 		transform.Translate(Vector3.right * Speed * Time.smoothDeltaTime * keyHorizontal);
 		transform.Translate(Vector3.forward * Speed * Time.smoothDeltaTime * keyVertical);
-		//¾Õ¼­ »ç¿ëÇÑ transform¿¡ translate¸¦ Ãß°¡ÇÏ¿© x, y, x ÃàÀ¸·Î ÀÌµ¿ÇÏ°Ô ÇÕ´Ï´Ù. 
-		//vector3. µÚ¿¡ ¹æÇâÀ» ³Ö°í (left, right, forward, back, up, down)°Å±â¿¡ ¾Õ¼­ ¼³Á¤ÇÑ speed°ªÀ» °öÇÑ µÚ 
-		//½Ã°£´ç ¼Óµµ(Time.smoothDeltaTime)¿Í Å°ÀÔ·Â°ªÀ» °öÇØÁİ´Ï´Ù. Á¶ÀÌ½ºÆ½ÀÌ¸é ±â¿ïÀÓ¿¡ µû¶ó ¼Óµµ°¡ ¹Ù²ğ ¼ö ÀÖ½À´Ï´Ù.)
+		//ì•ì„œ ì‚¬ìš©í•œ transformì— translateë¥¼ ì¶”ê°€í•˜ì—¬ x, y, x ì¶•ìœ¼ë¡œ ì´ë™í•˜ê²Œ í•©ë‹ˆë‹¤. 
+		//vector3. ë’¤ì— ë°©í–¥ì„ ë„£ê³  (left, right, forward, back, up, down)ê±°ê¸°ì— ì•ì„œ ì„¤ì •í•œ speedê°’ì„ ê³±í•œ ë’¤ 
+		//ì‹œê°„ë‹¹ ì†ë„(Time.smoothDeltaTime)ì™€ í‚¤ì…ë ¥ê°’ì„ ê³±í•´ì¤ë‹ˆë‹¤. ì¡°ì´ìŠ¤í‹±ì´ë©´ ê¸°ìš¸ì„ì— ë”°ë¼ ì†ë„ê°€ ë°”ë€” ìˆ˜ ìˆìŠµë‹ˆë‹¤.)
 	}
 }

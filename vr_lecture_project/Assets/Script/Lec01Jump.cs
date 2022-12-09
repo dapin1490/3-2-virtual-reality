@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class Lec01Jump : MonoBehaviour
 {
-	public float jumpSpeed = 5.0f;  // Á¡ÇÁ ¼Óµµ, ÈûÀ» °áÁ¤ÇÕ´Ï´Ù. 
-	public bool isGrounded = false; // boolÀº int, float¿Í °°ÀÌ º¯¼öÀÇ Æ¯Â¡ÀÎµ¥, true, false µÎ °¡Áö °ªÀ» Áö´Õ´Ï´Ù.
-	Rigidbody rgbd; //rigidbody ¼Ó¼ºÀ» »ç¿ëÇÒ ¿¹Á¤ÀÔ´Ï´Ù. Á¦°¡ ÀÓÀÇ·Î Á¤ÇÑ rgbd¶ó´Â ¸íÄªÀ¸·Î º¯¼ö¸¦ ¸¸µé¾ú½À´Ï´Ù.
+	public float jumpSpeed = 5.0f;  // ì í”„ ì†ë„, íž˜ì„ ê²°ì •í•©ë‹ˆë‹¤. 
+	public bool isGrounded = false; // boolì€ int, floatì™€ ê°™ì´ ë³€ìˆ˜ì˜ íŠ¹ì§•ì¸ë°, true, false ë‘ ê°€ì§€ ê°’ì„ ì§€ë‹™ë‹ˆë‹¤.
+	Rigidbody rgbd; //rigidbody ì†ì„±ì„ ì‚¬ìš©í•  ì˜ˆì •ìž…ë‹ˆë‹¤. ì œê°€ ìž„ì˜ë¡œ ì •í•œ rgbdë¼ëŠ” ëª…ì¹­ìœ¼ë¡œ ë³€ìˆ˜ë¥¼ ë§Œë“¤ì—ˆìŠµë‹ˆë‹¤.
 
 	void Start()
 	{
-		rgbd = GetComponent<Rigidbody>(); //¾Æ±î ¸¸µç rgbdº¯¼ö¿¡ ÇöÀç °´Ã¼ÀÇ rigidbody¸¦ ºÒ·¯¿É´Ï´Ù
+		rgbd = GetComponent<Rigidbody>(); //ì•„ê¹Œ ë§Œë“  rgbdë³€ìˆ˜ì— í˜„ìž¬ ê°ì²´ì˜ rigidbodyë¥¼ ë¶ˆëŸ¬ì˜µë‹ˆë‹¤
 	}
 
-	private void OnCollisionEnter() // ¹°Ã¼°¡ Ãæµ¹ÇÏ¸é, ¾Æ·¡ ½ºÅ©¸³Æ®¸¦ ½ÇÇàÇÕ´Ï´Ù.
+	private void OnCollisionEnter() // ë¬¼ì²´ê°€ ì¶©ëŒí•˜ë©´, ì•„ëž˜ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì‹¤í–‰í•©ë‹ˆë‹¤.
 	{
-		isGrounded = true;    //ÀÌ º¯¼ö´Â Á¡ÇÁ ÁØºñ°¡ ‰ç´Ù´Â Ç¥½Ã·Î »ç¿ëÇÏ¿´½À´Ï´Ù.
-		// ¶¥(¾Æ¹« ¹°Ã¼)¿¡ ´ê¾ÆÀÖÀ¸¸é È°¼ºÈ­ µË´Ï´Ù  
+		isGrounded = true;    //ì´ ë³€ìˆ˜ëŠ” ì í”„ ì¤€ë¹„ê°€ ë¬ë‹¤ëŠ” í‘œì‹œë¡œ ì‚¬ìš©í•˜ì˜€ìŠµë‹ˆë‹¤.
+		// ë•…(ì•„ë¬´ ë¬¼ì²´)ì— ë‹¿ì•„ìžˆìœ¼ë©´ í™œì„±í™” ë©ë‹ˆë‹¤  
 	}
 
 	void Update()
 	{
-		if (isGrounded) // isGrounded==true ¸¦ ÁÙÀÎ ¸»ÀÔ´Ï´Ù. ¶¥¿¡ ´ê¾ÆÀÖ´Â »óÅÂ¶ó¸é ¾Æ·¡ ½ºÅ©¸³Æ®¸¦ Çã¿ëÇÕ´Ï´Ù.
+		if (isGrounded) // isGrounded==true ë¥¼ ì¤„ì¸ ë§ìž…ë‹ˆë‹¤. ë•…ì— ë‹¿ì•„ìžˆëŠ” ìƒíƒœë¼ë©´ ì•„ëž˜ ìŠ¤í¬ë¦½íŠ¸ë¥¼ í—ˆìš©í•©ë‹ˆë‹¤.
 		{
-			if (Input.GetKeyDown(KeyCode.Space)) // ½ºÆäÀÌ½º¸¦ ´©¸£¸é(down) ¾Æ·¡ ½ºÅ©¸³Æ®¸¦ ½ÇÇàÇÕ´Ï´Ù.
+			if (Input.GetKeyDown(KeyCode.Space)) // ìŠ¤íŽ˜ì´ìŠ¤ë¥¼ ëˆ„ë¥´ë©´(down) ì•„ëž˜ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì‹¤í–‰í•©ë‹ˆë‹¤.
 			{
 				rgbd.AddForce(new Vector3(0, 1, 0) * jumpSpeed, ForceMode.Impulse);
-				// ¹°¸®ÀûÀ¸·Î ÈûÀ» °¡ÇÏ´Â addforce ¸í·ÉÀÔ´Ï´Ù. yÃàÀ¸·Î 1¸¸Å­ ÈûÀ» °¡ÇÏ°í, jumpspeed´Â ±× ¼Óµµ¸¦ °¡¼ÓÇÏ¸ç impulse´Â ÇÑ¹ø¿¡ °­ÇÑ ÈûÀ» ÁÖ´Â °ÍÀ» ÀÇ¹ÌÇÕ´Ï´Ù. 
-				isGrounded = false; //Á¡ÇÁ¸¦ ÇßÀ¸¸é ¹Ýº¹ ½ÇÇàÀ» ¸·±â À§ÇØ ¶¥¿¡¼­ ¶³¾îÁ³´Ù°í »óÅÂ¸¦ ¹Ù²ß´Ï´Ù.
+				// ë¬¼ë¦¬ì ìœ¼ë¡œ íž˜ì„ ê°€í•˜ëŠ” addforce ëª…ë ¹ìž…ë‹ˆë‹¤. yì¶•ìœ¼ë¡œ 1ë§Œí¼ íž˜ì„ ê°€í•˜ê³ , jumpspeedëŠ” ê·¸ ì†ë„ë¥¼ ê°€ì†í•˜ë©° impulseëŠ” í•œë²ˆì— ê°•í•œ íž˜ì„ ì£¼ëŠ” ê²ƒì„ ì˜ë¯¸í•©ë‹ˆë‹¤. 
+				isGrounded = false; //ì í”„ë¥¼ í–ˆìœ¼ë©´ ë°˜ë³µ ì‹¤í–‰ì„ ë§‰ê¸° ìœ„í•´ ë•…ì—ì„œ ë–¨ì–´ì¡Œë‹¤ê³  ìƒíƒœë¥¼ ë°”ê¿‰ë‹ˆë‹¤.
 			}
 		}
 	}
