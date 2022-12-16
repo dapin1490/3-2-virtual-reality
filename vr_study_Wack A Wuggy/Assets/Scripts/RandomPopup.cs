@@ -4,43 +4,41 @@ using UnityEngine;
 
 public class RandomPopup : MonoBehaviour
 {
-    int status = 30;
+    int status;
     int frame = 0;
     bool UpFlag = false;
-    Animator anim;
+
+    public float Speed = 2;
 
     // Start is called before the first frame update
     void Start()
     {
         print("RandomPopup script start");
-        status = 30;
-        anim = GetComponent<Animator>();
+        status = 300;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // status == 15 : popup
-        // frame >= 30 && Random.Range(1, 30+1) % 30 == 0 : down
         // if wacked, down rightnow
         frame++;
 
-        if ((UpFlag == false && Random.Range(1, status+1) % status == 0) || frame >= 150)
+        if (!UpFlag && (Random.Range(1, status + 1) % status == 0 || frame >= 500))
         {
             UpFlag = true;
             frame = 0;
-            anim.SetBool("RdPu_UpFlag", UpFlag);
-            anim.SetBool("RdPu_DownFlag", !UpFlag);
-            print("up");
+            status = 60;
+            transform.Translate(Vector3.left * Speed * 1);
+            print(this.gameObject.name + " up");
         }
 
-        if (UpFlag == true && frame >= 90 && Random.Range(1, status + 1) % status == 0)
+        if (UpFlag && frame >= 60 && Random.Range(1, status + 1) % status == 0)
         {
             UpFlag = false;
             frame = 0;
-            anim.SetBool("RdPu_UpFlag", UpFlag);
-            anim.SetBool("RdPu_DownFlag", !UpFlag);
-            print("down");
+            status = 300;
+            transform.Translate(Vector3.right * Speed * 1);
+            print(this.gameObject.name + " down");
         }
     }
 }
