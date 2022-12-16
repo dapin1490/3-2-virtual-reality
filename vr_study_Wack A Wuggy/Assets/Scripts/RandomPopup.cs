@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RandomPopup : MonoBehaviour
 {
-    int status = 300;
+    int status = 30;
     int frame = 0;
     bool UpFlag = false;
     Animator anim;
@@ -13,7 +13,7 @@ public class RandomPopup : MonoBehaviour
     void Start()
     {
         print("RandomPopup script start");
-        status = 300;
+        status = 30;
         anim = GetComponent<Animator>();
     }
 
@@ -25,7 +25,7 @@ public class RandomPopup : MonoBehaviour
         // if wacked, down rightnow
         frame++;
 
-        if ((UpFlag == false && Random.Range(1, status+1) % status == 0) || frame >= 500)
+        if ((UpFlag == false && Random.Range(1, status+1) % status == 0) || frame >= 150)
         {
             UpFlag = true;
             frame = 0;
@@ -34,7 +34,7 @@ public class RandomPopup : MonoBehaviour
             print("up");
         }
 
-        if (UpFlag == true && frame >= 200 && Random.Range(1, status + 1) % status == 0)
+        if (UpFlag == true && frame >= 90 && Random.Range(1, status + 1) % status == 0)
         {
             UpFlag = false;
             frame = 0;
