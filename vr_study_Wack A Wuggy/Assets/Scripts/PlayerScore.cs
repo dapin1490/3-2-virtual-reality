@@ -15,7 +15,7 @@ public class PlayerScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) || OVRInput.Get(OVRInput.Button.Start))
+        if (Input.GetKeyDown(KeyCode.R) || OVRInput.Get(OVRInput.Button.Two))
         {
             score = 0;
         }

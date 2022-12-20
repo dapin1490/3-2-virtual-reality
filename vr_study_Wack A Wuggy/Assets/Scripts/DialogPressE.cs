@@ -10,12 +10,14 @@ public class DialogPressE : MonoBehaviour
     public TMP_Text logtext;
     int turn = 0;
     string defaultText;
+    bool InTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
         print("dialog script start");
         defaultText = logtext.text;
+        InTrigger = false;
 
         dialog = new string[]
         {
@@ -37,16 +39,39 @@ public class DialogPressE : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (InTrigger &&  Input.GetKeyDown(KeyCode.E))
+        {
+            print("dialog: E");
+            Dialog();
+        }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && (Input.GetKeyDown("e") || OVRInput.Get(OVRInput.Button.One)))
+        print("in : " + other.name);
+        if (other.tag == "Player")
         {
+            InTrigger = true;
             player = other.gameObject;
-            player.GetComponent<Rigidbody>().isKinematic = true;
-            Dialog();
+        }
+    }
+
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.tag == "Player" && (Input.GetKeyDown(KeyCode.E) || OVRInput.Get(OVRInput.Button.One)))
+    //    {
+    //        player = other.gameObject;
+    //        player.GetComponent<Rigidbody>().isKinematic = true;
+    //        Dialog();
+    //    }
+    //}
+
+    private void OnTriggerExit(Collider other)
+    {
+        print("out : " + other.name);
+        if (other.tag == "Player")
+        {
+            InTrigger = false;
         }
     }
 
@@ -54,7 +79,9 @@ public class DialogPressE : MonoBehaviour
     {
         if (turn < dialog.Length)
         {
+            player.GetComponent<Rigidbody>().isKinematic = true;
             logtext.text = dialog[turn++];
+            print(logtext.text);
         }
         else
         {

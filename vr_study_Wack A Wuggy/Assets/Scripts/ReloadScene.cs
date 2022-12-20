@@ -18,7 +18,7 @@ public class ReloadScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.P) || OVRInput.Get(OVRInput.Button.Three))
         {
             frame += 1;
         }
