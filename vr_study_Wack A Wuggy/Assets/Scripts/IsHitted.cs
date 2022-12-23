@@ -5,4 +5,5 @@ using UnityEngine;
 public class IsHitted : MonoBehaviour
 {
     public bool hitted = false;
+    public bool popped = false;
 }

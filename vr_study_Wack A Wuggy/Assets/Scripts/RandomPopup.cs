@@ -6,8 +6,6 @@ public class RandomPopup : MonoBehaviour
 {
     int status;
     int frame = 0;
-    bool UpFlag = false;
-    bool hitted;
 
     public float Speed = 2;
 
@@ -15,8 +13,7 @@ public class RandomPopup : MonoBehaviour
     void Start()
     {
         // print("RandomPopup script start");
-        status = 300;
-        hitted = this.GetComponent<IsHitted>();
+        status = 600;
     }
 
     // Update is called once per frame
@@ -25,22 +22,22 @@ public class RandomPopup : MonoBehaviour
         // if wacked, down rightnow
         frame++;
 
-        if (!UpFlag && (Random.Range(1, status + 1) % status == 0 || frame >= 500))
+        if (!this.GetComponent<IsHitted>().popped && (Random.Range(1, status + 1) % status == 0 || frame >= 500))
         {
-            UpFlag = true;
+            this.GetComponent<IsHitted>().popped = true;
             frame = 0;
-            status = 60;
+            status /= 10;
             transform.Translate(Vector3.left * Speed * 1);
             // print(this.gameObject.name + " up");
         }
 
-        if (UpFlag && ((frame >= 60 && Random.Range(1, status + 1) % status == 0) || hitted))
+        if (this.GetComponent<IsHitted>().popped && ((frame >= 60 && Random.Range(1, status + 1) % status == 0) || this.GetComponent<IsHitted>().hitted))
         {
-            UpFlag = false;
+            this.GetComponent<IsHitted>().popped = false;
             frame = 0;
-            status = 300;
+            status *= 10;
             transform.Translate(Vector3.right * Speed * 1);
-            hitted = false;
+            this.GetComponent<IsHitted>().hitted = false;
             // print(this.gameObject.name + " down");
         }
     }

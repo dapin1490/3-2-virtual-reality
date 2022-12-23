@@ -23,7 +23,7 @@ public class ReloadScene : MonoBehaviour
             frame += 1;
         }
 
-        if (frame >= 1000)
+        if (frame >= 300)
         {
             frame = 0;
             SceneManager.LoadScene(sceneIndex);

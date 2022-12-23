@@ -17,6 +17,7 @@ public class PlayerScore : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) || OVRInput.Get(OVRInput.Button.Two))
         {
+            print("reset player score");
             score = 0;
         }
     }
